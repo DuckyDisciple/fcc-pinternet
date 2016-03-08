@@ -1,0 +1,24 @@
+-var title = name + "'s Library"
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet" href="/client/css/main.css" type="text/css")
+    include ./includes/header.jade
+    body.library-page
+        .container.library-div
+            h1.library-header= title
+            a.add-book-link(href="/add")
+                p.add-book ADD BOOK
+            each val in books
+                div.book-listing
+                    .request-flag.hide(id=val.id) !
+                    a.book-link(href="/book/"+val.id)
+                        p.book-title= val.title
+                    p.book-desc= val.description
+                    p.delete-book -
+        script(type="text/javascript" src="/common/ajax-functions.js")
+        script(type="text/javascript" src="/controllers/userController.client.js")
+        script(type="text/javascript" src="/client/js/jquery.min.js")
+        script(type="text/javascript" src="/socket.io/socket.io.js")
+        script(type="text/javascript" src="/client/js/library.js")

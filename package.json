@@ -1,0 +1,30 @@
+{
+  "name": "Bookswap",
+  "version": "1.0.0",
+  "description": "App to trade books with other users",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "4.1.1"
+  },
+  "repository": "",
+  "author": "Drew Sartorius",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.14.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "express-generator": "^4.13.1",
+    "express-session": "^1.13.0",
+    "http": "0.0.0",
+    "jade": "^1.11.0",
+    "mongoose": "^4.3.7",
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^0.2.0",
+    "request": "^2.69.0",
+    "socket.io": "^1.4.5",
+    "socket.io-client": "^1.4.5"
+  }
+}

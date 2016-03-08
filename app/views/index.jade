@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title Bookswap
+        link(rel="stylesheet" href="/client/css/main.css" type="text/css")
+    include ./includes/header.jade
+    body
+        .container-home
+            img.logo-main(src="/client/img/BookswapLogo.png")
+            p.home-content
+            | Welcome to Bookswap
+            br
+            | Login to add/view your books or search for books below.
+            .search-widget
+                form(action="/search" method="get")
+                    input.search-box(type="text" name="query")
+                    input.submit(type="submit" value="SEARCH")
+    script(type="text/javascript" src="/common/ajax-functions.js")
+    script(type="text/javascript" src="/controllers/userController.client.js")
