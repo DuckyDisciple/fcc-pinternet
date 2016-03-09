@@ -41,7 +41,7 @@ module.exports=function(app, passport){
         .get(isLoggedIn, userHandler.forwardToMyLibrary);
         
     app.route('/library/:id')
-        .get(isLoggedIn, userHandler.populateLibrary);
+        .get(userHandler.populateLibrary);
         
     app.route('/book/:id')
         .get(userHandler.getBook);

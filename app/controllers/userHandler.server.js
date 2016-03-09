@@ -34,17 +34,31 @@ function UserHandler(){
     };
     
     this.populateLibrary = function(req,res){
-        Users.findOne({'twitter.id':req.user.twitter.id})
+        Users.findOne({_id:req.params.id})
             .populate('pins')
             .exec(function(err,user){
                 if(err) throw err;
-                var isOwner = false;
-                if(req.params.id === user._id.toString()) isOwner=true;
-                res.render('library',{
-                    name: user.twitter.displayName,
-                    pins: user.pins,
-                    owner: isOwner
-                });
+                if(req.user){
+                    Users.findOne({'twitter.id':req.user.twitter.id})
+                        .exec(function(err, curUser) {
+                            if(err) throw err;
+                            var isOwner = false;
+                            if(req.params.id === user._id.toString()) isOwner=true;
+                            res.render('library',{
+                                name: user.twitter.displayName,
+                                pins: user.pins,
+                                owner: isOwner
+                            });
+                        });
+                }else{
+                    res.render('library',{
+                        name: user.twitter.displayName,
+                        pins: user.pins,
+                        owner: false
+                    });
+                }
+                
+                
             });
     };
     
