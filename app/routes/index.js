@@ -36,8 +36,11 @@ module.exports=function(app, passport){
         .get(isLoggedIn, function(req,res){
             res.render('new',{});
         });
-        
+    
     app.route('/library')
+        .get(isLoggedIn, userHandler.forwardToMyLibrary);
+        
+    app.route('/library/:id')
         .get(isLoggedIn, userHandler.populateLibrary);
         
     app.route('/book/:id')

@@ -25,11 +25,26 @@ function UserHandler(){
             });
     };
     
+    this.forwardToMyLibrary = function(req,res){
+        Users.findOne({'twitter.id':req.user.twitter.id})
+            .exec(function(err, user) {
+                if(err) throw err;
+                res.redirect('/library/'+user._id);
+            });
+    };
+    
     this.populateLibrary = function(req,res){
         Users.findOne({'twitter.id':req.user.twitter.id})
+            .populate('pins')
             .exec(function(err,user){
                 if(err) throw err;
-                res.render('library',{name: user.name, books: user.books});
+                var isOwner = false;
+                if(req.params.id === user._id.toString()) isOwner=true;
+                res.render('library',{
+                    name: user.twitter.displayName,
+                    pins: user.pins,
+                    owner: isOwner
+                });
             });
     };
     

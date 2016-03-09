@@ -1,4 +1,4 @@
--var title = name + "'s Library"
+-var title = name + "'s Pins"
 doctype html
 html
     head
@@ -8,8 +8,13 @@ html
     body.library-page
         .container.library-div
             h1.library-header= title
-        script(type="text/javascript" src="/common/ajax-functions.js")
-        script(type="text/javascript" src="/controllers/userController.client.js")
+            .pin-wall.grid
+            each val in pins
+                .grid-item
+                    img.pin-image(src=val.url)
+                    p.pin-title= val.title
+                    if owner
+                        p.remove-pin -
         script(type="text/javascript" src="/client/js/jquery.min.js")
-        script(type="text/javascript" src="/socket.io/socket.io.js")
+        script(type="text/javascript" src="/client/js/masonry.pkgd.min.js")
         script(type="text/javascript" src="/client/js/library.js")
