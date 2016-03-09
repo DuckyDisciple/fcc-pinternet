@@ -74,7 +74,7 @@ module.exports=function(app, passport){
     app.route('/requests/count')
         .get(isLoggedIn, userHandler.getRequestCount);
     
-    app.route('/api/:id')
+    app.route('/api/user')
         .get(isLoggedIn, function(req, res){
             res.json(req.user.twitter);
         });

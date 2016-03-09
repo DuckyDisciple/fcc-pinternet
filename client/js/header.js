@@ -1,21 +1,20 @@
-var socket = io();
+var displayName = $("#profile-display");
 
-function updateRequestCount(){
-    $(".requests").addClass("hide");
-    $(".requests").removeClass("header-requests");
-    $.get("/requests/count",function(data){
-        if(data.count > 0){
-            $(".requests").html(data.count);
-            $(".requests").addClass("header-requests");
-            $(".requests").removeClass("hide");
+var apiUrl = "/api/user";
+
+function updateUser(){
+    $.get(apiUrl, function(user){
+        if(user.id !== undefined){
+            $(".not-logged-in").addClass("hide");
+            $(".logged-in").removeClass("hide");
+            displayName.html(user.displayName);
+        }else{
+            $(".not-logged-in").removeClass("hide");
+            $(".logged-in").addClass("hide");
         }
     });
 }
 
-$(document).on('ready',function(){
-    updateRequestCount();
-});
-
-socket.on("requested",function(msg){
-    updateRequestCount();
+$(document).ready(function(){
+    updateUser();
 });
