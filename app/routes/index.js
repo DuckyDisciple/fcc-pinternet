@@ -76,14 +76,14 @@ module.exports=function(app, passport){
     
     app.route('/api/:id')
         .get(isLoggedIn, function(req, res){
-            res.json(req.user.google);
+            res.json(req.user.twitter);
         });
     
-    app.route('/auth/google')
-        .get(passport.authenticate('google',{ scope: ['profile','email'] }));
+    app.route('/auth/twitter')
+        .get(passport.authenticate('twitter'));
     
-    app.route('/auth/google/callback')
-        .get(passport.authenticate('google',{
+    app.route('/auth/twitter/callback')
+        .get(passport.authenticate('twitter',{
             successRedirect: '/library',
             failureRedirect: '/login'
         }));

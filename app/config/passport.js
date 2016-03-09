@@ -1,7 +1,7 @@
 'use strict';
 
 // var GitHubStrategy = require('passport-github').Strategy;
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
 var User = require("../models/users.js");
 var configAuth = require("./auth.js");
 
@@ -46,27 +46,24 @@ module.exports = function(passport){
     //     });
     // }));
     
-    passport.use(new GoogleStrategy({
-        clientID: configAuth.googleAuth.clientID,
-        clientSecret: configAuth.googleAuth.clientSecret,
-        callbackURL: configAuth.googleAuth.callbackURL
+    passport.use(new TwitterStrategy({
+        consumerKey: configAuth.twitterAuth.clientID,
+        consumerSecret: configAuth.twitterAuth.clientSecret,
+        callbackURL: configAuth.twitterAuth.callbackURL
     },
     function(token, refreshToken, profile, done){
         process.nextTick(function(){
-            User.findOne({'google.id':profile.id}, function(err, user) {
+            User.findOne({'twitter.id':profile.id}, function(err, user) {
                 if(err) return done(err);
                 if(user){
                     return done(null, user);
                 }else{
                     var newUser = new User();
                     
-                    newUser.google.id = profile.id;
-                    newUser.google.token = token;
-                    newUser.google.displayName = profile.displayName;
-                    newUser.google.email = profile.emails[0].value;
-                    newUser.name = profile.displayName;
-                    newUser.city = "";
-                    newUser.state = "";
+                    newUser.twitter.id = profile.id;
+                    newUser.twitter.token = token;
+                    newUser.twitter.displayName = profile.displayName;
+                    newUser.twitter.username = profile.username;
                     
                     newUser.save(function(err){
                         if(err) return err;

@@ -4,18 +4,15 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var User = new Schema({
-    google:{
+    twitter:{
         id: String,
         displayName: String,
-        email: String,
+        username: String,
         token: String
     },
-    name: String,
-    city: String,
-    state: String,
-    books: [{
+    pins: [{
         type: Schema.Types.ObjectId,
-        ref: 'Book'
+        ref: 'Pin'
     }]
 });
 

@@ -1,7 +1,6 @@
 "use strict";
 
 var Users = require("../models/users.js");
-var Books = require("../models/books.js");
 
 var mongoose = require('mongoose');
 
@@ -27,8 +26,7 @@ function UserHandler(){
     };
     
     this.populateLibrary = function(req,res){
-        Users.findOne({'google.id':req.user.google.id})
-            .populate('books')
+        Users.findOne({'twitter.id':req.user.twitter.id})
             .exec(function(err,user){
                 if(err) throw err;
                 res.render('library',{name: user.name, books: user.books});

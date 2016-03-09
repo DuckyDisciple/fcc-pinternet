@@ -1,7 +1,7 @@
 {
-  "name": "Bookswap",
+  "name": "Pinternet",
   "version": "1.0.0",
-  "description": "App to trade books with other users",
+  "description": "App to pin pictures online",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -22,9 +22,6 @@
     "jade": "^1.11.0",
     "mongoose": "^4.3.7",
     "passport": "^0.3.2",
-    "passport-google-oauth": "^0.2.0",
-    "request": "^2.69.0",
-    "socket.io": "^1.4.5",
-    "socket.io-client": "^1.4.5"
+    "passport-twitter": "^1.0.4"
   }
 }

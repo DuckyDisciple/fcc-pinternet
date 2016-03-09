@@ -16,26 +16,6 @@ var session = require('express-session');
 var parser = require('body-parser');
 
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
-
-io.on('connection', function(socket){
-  console.log("A user connected");
-  
-  socket.on("request",function(msg){
-    console.log("Requested book: "+msg);
-    io.emit("requested", msg);
-  });
-  
-  socket.on("unrequest",function(msg){
-    console.log("Cancelled request: "+msg);
-    io.emit("requested", msg);
-  });
-  
-  socket.on("accepted",function(msg){
-    console.log("Accepted request: "+msg);
-    io.emit("requested", msg);
-  });
-});
 
 require('./app/config/passport')(passport);
 
