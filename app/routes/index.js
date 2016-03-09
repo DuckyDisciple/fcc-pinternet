@@ -32,9 +32,9 @@ module.exports=function(app, passport){
             res.redirect('/');
         });
     
-    app.route('/add')
+    app.route('/new')
         .get(isLoggedIn, function(req,res){
-            res.render('add',{});
+            res.render('new',{});
         });
         
     app.route('/library')
@@ -44,7 +44,7 @@ module.exports=function(app, passport){
         .get(userHandler.getBook);
     
     app.route('/create')
-        .post(isLoggedIn, userHandler.addBook);
+        .post(isLoggedIn, userHandler.newPin);
     
     app.route('/search')
         .get(userHandler.search);

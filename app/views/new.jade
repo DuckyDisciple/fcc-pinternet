@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title New Pin
+        link(rel="stylesheet" href="/client/css/main.css" type="text/css")
+    include ./includes/header.jade
+    body.new-page
+        .container.new-div
+            h2 New Pin
+            form(action="/create" method="post")
+                label.title-lbl Title
+                input.title-textbox(type="text" name="title")
+                label.url-lbl URL
+                input.url-textbox(type="url" name="url")
+                button.submit(type="submit") PIN

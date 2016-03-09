@@ -1,24 +1,24 @@
 "use strict";
 
 var Users = require("../models/users.js");
+var Pins = require("../models/pins.js");
 
 var mongoose = require('mongoose');
 
 function UserHandler(){
     
-    this.addBook = function(req,res){
+    this.newPin = function(req,res){
         var newId = mongoose.Types.ObjectId();
-        var newBook = new Books({
+        var newPin = new Pins({
             _id: newId,
             title: req.body.title,
-            description: req.body.desc,
-            requestedBy: null
+            url: req.body.url
         });
-        Users.findOneAndUpdate({'google.id': req.user.google.id},{$push: {books: newId}})
+        Users.findOneAndUpdate({'twitter.id': req.user.twitter.id},{$push: {pins: newId}})
             .exec(function(err, user) {
                 if(err) throw err;
-                newBook._owner = user._id;
-                newBook.save(function(err2,book){
+                newPin._owner = user._id;
+                newPin.save(function(err2,pin){
                     if(err2) throw err2;
                     res.redirect('/library');
                 });
