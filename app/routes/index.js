@@ -23,7 +23,7 @@ module.exports=function(app, passport){
         
     app.route('/login')
         .get(function(req,res){
-            res.sendFile(path+"/client/login.html");
+            res.render('login',{});
         });
     
     app.route('/logout')
