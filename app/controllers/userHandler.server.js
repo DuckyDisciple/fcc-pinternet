@@ -62,6 +62,27 @@ function UserHandler(){
             });
     };
     
+    this.populateHome = function(req,res){
+        Pins.find({})
+            .populate('_owner')
+            .exec(function(err,pins){
+                if(err) throw err;
+                var pinData = [];
+                for(var i in pins){
+                    var newPin = {
+                        title: pins[i].title,
+                        url: pins[i].url,
+                        owner: {
+                            name: pins[i]._owner.twitter.displayName,
+                            id: pins[i]._owner._id
+                        }
+                    };
+                    pinData.push(newPin);
+                }
+                res.render('index',{pins: pinData});
+            });
+    };
+    
     this.getBook = function(req,res){
         Books.findOne({_id:req.params.id})
             .populate('_owner')

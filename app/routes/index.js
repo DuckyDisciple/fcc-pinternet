@@ -17,9 +17,7 @@ module.exports=function(app, passport){
     var userHandler = new UserHandler();
     
     app.route('/')
-        .get(function(req,res){
-            res.render('index',{});
-        });
+        .get(userHandler.populateHome);
         
     app.route('/login')
         .get(function(req,res){
