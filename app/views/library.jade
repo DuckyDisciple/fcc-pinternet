@@ -14,7 +14,7 @@ html
                     img.pin-image(src=val.url)
                     p.pin-title= val.title
                     if owner
-                        p.remove-pin -
+                        p.remove-pin(id=val._id) REMOVE
         script(type="text/javascript" src="/client/js/jquery.min.js")
         script(type="text/javascript" src="/client/js/masonry.pkgd.min.js")
         script(type="text/javascript" src="/client/js/library.js")

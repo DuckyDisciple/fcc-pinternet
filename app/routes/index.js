@@ -41,39 +41,11 @@ module.exports=function(app, passport){
     app.route('/library/:id')
         .get(userHandler.populateLibrary);
         
-    app.route('/book/:id')
-        .get(userHandler.getBook);
-    
     app.route('/create')
         .post(isLoggedIn, userHandler.newPin);
     
-    app.route('/search')
-        .get(userHandler.search);
-        
-    app.route('/book/delete/:id')
-        .post(isLoggedIn, userHandler.deleteBook);
-    
-    app.route('/profile')
-        .get(isLoggedIn, userHandler.displayProfile)
-        .post(isLoggedIn, userHandler.updateProfile);
-    
-    app.route('/request/book/:id')
-        .post(isLoggedIn, userHandler.requestBook);
-        
-    app.route('/request/user/:bookId')
-        .get(userHandler.getUserStatus);
-    
-    app.route('/request/cancel/:id')
-        .post(isLoggedIn, userHandler.cancelRequest);
-    
-    app.route('/request/accept/:id')
-        .post(isLoggedIn, userHandler.acceptRequest);
-        
-    app.route('/library/requests')
-        .get(isLoggedIn, userHandler.getAllRequests);
-    
-    app.route('/requests/count')
-        .get(isLoggedIn, userHandler.getRequestCount);
+    app.route('/delete/:id')
+        .post(isLoggedIn, userHandler.removePin);
     
     app.route('/api/user')
         .get(isLoggedIn, function(req, res){
