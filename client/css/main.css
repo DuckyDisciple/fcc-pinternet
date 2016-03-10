@@ -280,7 +280,7 @@ a.btn {
 button.home {
     height: 40px;
     width: 75px;
-    background: #00a4d8;
+    background: #ed2828;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -290,7 +290,7 @@ button.home {
 }
 
 button.home:hover {
-    background: #0082a7;
+    background: #b11515;
     cursor: pointer;
 }
 
