@@ -43,7 +43,7 @@ function UserHandler(){
                         .exec(function(err, curUser) {
                             if(err) throw err;
                             var isOwner = false;
-                            if(req.params.id === user._id.toString()) isOwner=true;
+                            if(req.params.id === curUser._id.toString()) isOwner=true;
                             res.render('library',{
                                 name: user.twitter.displayName,
                                 pins: user.pins,
