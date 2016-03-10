@@ -210,20 +210,12 @@ a.btn {
     color: #fff;
 }
 
-.title-text {
-    font-size: 75px;
-}
-
 .btn:focus {
     outline: 0;
 }
 
 .btn:hover{
     background: #0082a7;
-}
-
-.login-text {
-    color: #000;
 }
 
 /*-----Library Page-----*/
