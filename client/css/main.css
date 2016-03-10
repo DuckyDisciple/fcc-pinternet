@@ -70,7 +70,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*box-shadow: 0 0 25px 0 rgba(200,255,0,0.75);*/
+    box-shadow: 0 0 25px 0 rgba(0,0,0,0.75);
 }
 
 .signed-in {
@@ -145,6 +145,7 @@ nav p {
     padding: 5px;
     width: 25%;
     display: inline-block;
+    box-shadow: 3px 3px 10px 0 rgba(0,0,0,0.75);
 }
 
 .grid-item img {
