@@ -4,7 +4,7 @@ body {
     font-size: 16px;
     text-align: center;
     background: #ddd;
-    padding: 100px 0 0 0;
+    padding: 50px 0 0 0;
     margin: 0;
 }
 
@@ -87,7 +87,7 @@ header {
 .login-button {
     height: 40px;
     width: 75px;
-    background: #00a4d8;
+    background: #ed2828;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -98,17 +98,17 @@ header {
 
 .login-button:hover {
     cursor: pointer;
-    background: #0082a7;
+    background: #b11515;
 }
 
 header a.menu {
     font-weight: bold;
     text-decoration: none;
-    color: #9c6700;
+    color: #ed2828;
 }
 
 header a:hover {
-    color: #624000;
+    color: #b11515;
 }
 
 nav {
@@ -123,18 +123,6 @@ nav p {
 
 .hide {
     display: none;
-}
-
-.header-requests {
-    background: #00a4d8;
-    border-radius: 50%;
-    color: #fff;
-    font-size: .7em;
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    text-align: center;
-    margin-right: 5px;
 }
 
 /*-----Home Page-----*/
