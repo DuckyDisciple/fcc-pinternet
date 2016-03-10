@@ -3,7 +3,7 @@ body {
     font-family: sans-serif;
     font-size: 16px;
     text-align: center;
-    background: #ddd;
+    background: #d9e7f4;
     padding: 50px 0 0 0;
     margin: 0;
 }
@@ -150,46 +150,23 @@ nav p {
 .grid-item img {
     width: 100%;
     height: 100%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-.container-home .search-widget form{
-    margin-top: 15px;
-    text-align: center;
+.pin-title {
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
-/*-----Search Widgit-----*/
-/*.search-stock {*/
-/*    border: none;*/
-/*    border-radius: 3px;*/
-/*    margin: 5px 10px 20px 0;*/
-/*    padding: 5px;*/
-/*}*/
-
-.search-box {
-    border: solid #000 1px;
-    border-radius: 3px;
-    margin: 5px 10px 20px 0;
-    padding: 5px;
+.pin-link {
+    text-decoration: none;
+    color: #ed2828;
 }
 
-.search-bar {
-    margin: 10px;
-}
-
-.search-widget form {
-    text-align: right;
-}
-
-.submit {
-    padding: 10px;
-    background: #00a4d8;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-}
-
-.submit:hover {
-    background: #0082a7;
+.pin-link:hover {
+    color: #b11515;
+    cursor: pointer;
 }
 
 /*-----Image Style-----*/
