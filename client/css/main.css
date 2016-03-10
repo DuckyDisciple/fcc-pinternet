@@ -219,74 +219,18 @@ a.btn {
 }
 
 /*-----Library Page-----*/
-.add-book-link {
-    text-decoration: none;
-}
-
-.add-book {
-    background: #00a4d8;
-    color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
-    padding: 5px;
-    margin-bottom: 20px;
-}
-
-.add-book:hover {
-    background: #0082a7;
-}
-
-.book-listing {
-    border-width: 1px;
-    border-color: #333;
-    border-radius: 5px;
-    border-style: solid;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.flagged {
-    background: #00a4d8;
-    border-radius: 50%;
-    display: inline-block;
-    color: #fff;
-    width: 15px;
-    height: 15px;
+.remove-pin {
     font-size: .8em;
-}
-
-.book-link {
-    text-decoration: none;
-    color: #9c6700;
+    background: #fe8a8a;
+    color: #ed2828;
+    padding: 3px;
+    border-radius: 0 0 5px 5px;
     font-weight: bold;
-    display: inline;
-    font-size: 1.4em;
 }
 
-.book-link:hover {
-    color: #624000;
-}
-
-.book-title {
-    display: inline;
-}
-
-.book-desc {
-    font-style: italic;
-}
-
-.delete-book {
-    background: #f59670;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 3px;
-    width: 50px;
-    margin: 10px auto 0 auto;
-}
-
-.delete-book:hover {
+.remove-pin:hover {
     cursor: pointer;
-    color: #f00;
+    color: #b11515;
 }
 
 /*-----Add Book Page-----*/
