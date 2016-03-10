@@ -17,7 +17,7 @@ p {
     color: #000;
     border-radius: 10px;
     width: 400px;
-    margin: 15px auto;    
+    margin: 25px auto;    
     padding: 15px;
 }
 
@@ -233,17 +233,21 @@ a.btn {
     color: #b11515;
 }
 
-/*-----Add Book Page-----*/
-.add-page form {
+/*-----Add Page-----*/
+.new-div form{
     display: flex;
     flex-direction: column;
 }
 
-.add-page input,textarea {
-    margin: 5px auto 10px auto;
-    align-self: center;
+.new-div label{
+    align-self: flex-start;
+    font-weight: bold;
+}
+
+.new-div input {
+    margin-bottom: 10px;
     border-radius: 3px;
-    border: solid 1px;
+    border: solid 1px #000;
     padding: 3px;
 }
 
@@ -251,110 +255,21 @@ a.btn {
     width: 250px;
 }
 
-.desc-textbox {
-    width: 325px;
-    height: 85px;
-}
-
 .submit {
+    border: none;
     font-weight: bold;
     margin-top: 10px;
-}
-
-/*-----Book Page-----*/
-.location-lbl {
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.book-city {
-    margin-top: 3px;
-}
-
-.request-status {
-    font-weight: bold;
-    color: #009688;
-    margin-top: 20px;
-}
-
-.owner-request {
-    border-radius: 5px;
-    border: none;
-    display: inline-block;
+    font-size: 1.2em;
+    background: #ed2828;
+    color: #fff;
     padding: 5px;
-    color: #000;
-    font-weight: bold;
-    margin: 5px;
+    border-radius: 3px;
 }
 
-.accept-request, .request-book {
-    background: #5cd364;
-}
-
-.accept-request:hover, .request-book:hover {
-    background: #2b9726;
+.submit:hover {
+    background: #b11515;
     cursor: pointer;
 }
-
-.deny-request, .cancel-request {
-    background: #e85d38;
-}
-
-.deny-request:hover, .cancel-request:hover {
-    background: #c11e1e;
-    cursor: pointer;
-}
-
-/*-----Profile Page-----*/
-.profile-page form{
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-page input {
-    border-radius: 3px;
-    padding: 3px;
-    border: solid 1px;
-    margin-bottom: 10px;
-}
-
-.profile-page label {
-    align-self: flex-start;
-}
-
-/*-----Search Results Page-----*/
-.logo-results {
-    height: 40px;
-    width: 80px;
-    float: left;
-}
-
-.search-widget {
-    margin: 15px auto 0 auto;
-}
-
-.results .search-widget {
-    margin-top: 0;
-}
-
-.results-header {
-    font-size: 24px;
-}
-
-.result {
-    color: #333;
-    margin: 10px auto;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 3px;
-    padding: 5px;
-    text-align: center;
-}
-
-.result h2 {
-    margin: 5px auto 10px auto;
-}
-
 
 /*-----Error Page-----*/
 .error-div {
