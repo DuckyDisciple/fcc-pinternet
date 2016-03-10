@@ -1,6 +1,9 @@
-$(".grid").masonry({
-    itemSelector: ".grid-item",
-    columnWidth: 200
+$(document).on('load',function(){
+    $(".grid").masonry({
+        itemSelector: ".grid-item",
+        columnWidth: ".grid-sizer",
+        percentPosition: true
+    });
 });
 
 $(".remove-pin").on('click',function(){

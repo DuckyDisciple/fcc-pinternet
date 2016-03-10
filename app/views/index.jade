@@ -8,6 +8,7 @@ html
         .container-home
             img.logo-main(src="/client/img/PinternetLogo.png")
             .pin-wall.grid
+                .grid-sizer
                 each val in pins
                     .grid-item
                         img.pin-image(src=val.url)

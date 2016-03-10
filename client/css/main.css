@@ -6,8 +6,6 @@ body {
     background: #ddd;
     padding: 100px 0 0 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
 }
 
 p {
@@ -19,6 +17,15 @@ p {
     color: #000;
     border-radius: 10px;
     width: 400px;
+    margin: 15px auto;    
+    padding: 15px;
+}
+
+.container-library {
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    width: 90%;
     margin: 15px auto;    
     padding: 15px;
 }
@@ -141,8 +148,20 @@ nav p {
     align-self: center;
 }
 
-.container-home div {
-    display: block;
+.grid-item {
+    background: #fff;
+    border: solid 1px #000;
+    border-radius: 5px;
+    margin: 10px;
+    max-width: 300px;
+    padding: 5px;
+    width: 25%;
+    display: inline-block;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
 }
 
 .container-home .search-widget form{
